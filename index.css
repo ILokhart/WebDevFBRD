@@ -9,6 +9,12 @@ h1 {
 
 p {
   color: #eeb211 !important;
+  text-align: justify;
+}
+
+.copyright {
+  color: #eeb211;
+  text-align: center;
 }
 
 table {
@@ -18,6 +24,13 @@ table {
   background-color: white;
   width: 30%;
   max-width: 90%;
+}
+
+.hp {
+  border: 8px #eeb211;
+  border-style: double;
+  padding: 15px;
+  background-color: white;
 }
 
 .navbar-default {
@@ -61,6 +74,11 @@ hr{
 .logo {
 width: 500px;
 height: auto;
+}
+
+.na {
+  width:100%;
+  height: auto;
 }
 
 @media (max-width: 400px){
