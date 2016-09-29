@@ -1,11 +1,59 @@
 body {
-  background-color: #00254c;
+  background-color: #00254c !important;
 }
+
 hi {
-  text-align: center;
-  color: #eeb211;
+  text-align: center !important;
+  color: #eeb211 !important;
 }
 
 p {
-  color: #eeb211;
+  color: #eeb211 !important;
+}
+table {
+  border: 1px solid #eeb211 !important;
+  outline-style: groove !important;
+  padding: 15px !important;
+}
+
+.navbar-default {
+  background-color: #00254c !important;
+  padding: 0 !important;
+  border: 0;
+}
+
+.navbar-nav{
+  float: right;
+}
+
+ul a {
+  color: #eeb211 !important;
+}
+
+
+ul a:hover {
+  color: white !important;
+}
+
+li {
+  background-color: #00254c !important;
+}
+
+hr{
+  width: 600px !important;
+  border: 2 !important;
+  border-color: #eeb211;
+}
+
+.padtable {
+  border-collapse: initial;
+}
+
+.padtable td {
+  padding: 0 10px;
+}
+
+.logo {
+width: 500;
+height: 116;
 }
