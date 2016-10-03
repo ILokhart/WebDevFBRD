@@ -84,12 +84,22 @@ border-collapse: initial;
 .lcol{
   color: #eeb211 !important;
   text-align: right;
-  width: 42%;
+  width: 45%;
 }
 
 .rcol{
   color: #eeb211 !important;
   text-align: left;
+}
+
+.ccol{
+  column-span: 2 !important;
+  color: #eeb211 !important;
+  text-align: center;
+}
+
+.borderless td, .borderless th {
+    border: none !important;
 }
 
 .logo {

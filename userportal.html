@@ -22,9 +22,8 @@
     <img src="./images/georgia-tech-logos.png" alt="Georgia Tech Logo" class="logo img-responsive">
     <br>
     <hr>
-    <br>
     <form action="">
-      <table class="portaltable table" width=50%c ellpadding="3px">
+      <table class="portaltable table borderless" width=50%c ellpadding="3px">
         <th colspan=2>Already a member? Login with your email and password.</th>
         <tr>
           <td class="lcol">Email: </td>
@@ -39,22 +38,30 @@
         </tr>
       </table>
     </form>
+    <hr/>
     <form action="">
-      <table class="portaltable table" cellpadding="3px">
+      <table class="portaltable table borderless" cellpadding="3px">
         <tr>
           <th>
             <p>To register, please select an option below:</p>
-            <br/>
-            <input type="radio" name="role" value="Student">Student
-            <br/>
-            <input type="radio" name="role" value="Volunteer">Volunteer
           </th>
         </tr>
         <tr>
-          <th colspan=2><input type="submit" value="Submit" align="center"/></th>
+          <td class="ccol">
+            <input type="radio" name="role" value="Student">Student
+          </td>
         </tr>
-      </table>
-    </form>
-    <p class="copyright">&copy;Copyright 2016 All rights reserved.</p>
-  </body>
-  </html>
+        <tr>
+        <td class="ccol">
+          <input type="radio" name="role" value="Volunteer">Volunteer
+        </td>
+      </tr>
+      <tr>
+        <td class="ccol"><input type="submit" value="Submit" align="center"/></td>
+      </tr>
+    </table>
+  </form>
+  <hr/>
+  <p class="copyright">&copy;Copyright 2016 All rights reserved.</p>
+</body>
+</html>
