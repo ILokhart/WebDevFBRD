@@ -73,6 +73,7 @@ hr{
 
 .portaltable {
 border-collapse: initial;
+
 }
 
 .portaltable th{
@@ -83,7 +84,7 @@ border-collapse: initial;
 .lcol{
   color: #eeb211 !important;
   text-align: right;
-  width: 40%;
+  width: 42%;
 }
 
 .rcol{

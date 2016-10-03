@@ -23,9 +23,9 @@
     <br>
     <hr>
     <br>
-    <form>
-      <table class="portaltable">
-        <th colspan=2><p>Already a member? Login with your email and password.</p></th>
+    <form action="">
+      <table class="portaltable table" width=50%c ellpadding="3px">
+        <th colspan=2>Already a member? Login with your email and password.</th>
         <tr>
           <td class="lcol">Email: </td>
           <td><input type="textbox" name="loginEmail" /></td>
@@ -33,6 +33,25 @@
         <tr>
           <td class="lcol">Password: </td>
           <td><input type="textbox" name="loginPass" /></td>
+        </tr>
+        <tr>
+          <th colspan=2><input type="submit" value="Submit" align="center"/></th>
+        </tr>
+      </table>
+    </form>
+    <form action="">
+      <table class="portaltable table" cellpadding="3px">
+        <tr>
+          <th>
+            <p>To register, please select an option below:</p>
+            <br/>
+            <input type="radio" name="role" value="Student">Student
+            <br/>
+            <input type="radio" name="role" value="Volunteer">Volunteer
+          </th>
+        </tr>
+        <tr>
+          <th colspan=2><input type="submit" value="Submit" align="center"/></th>
         </tr>
       </table>
     </form>
