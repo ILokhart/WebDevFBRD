@@ -7,7 +7,7 @@ h1 {
   color: #eeb211 !important;
 }
 
-p {
+.padtable p {
   color: #eeb211 !important;
   text-align: justify;
 }
@@ -69,6 +69,26 @@ hr{
 .padtable td {
   padding: 0 10px;
   text-align: center;
+}
+
+.portaltable {
+border-collapse: initial;
+}
+
+.portaltable th{
+  text-align: center;
+  color: #eeb211 !important;
+}
+
+.lcol{
+  color: #eeb211 !important;
+  text-align: right;
+  width: 40%;
+}
+
+.rcol{
+  color: #eeb211 !important;
+  text-align: left;
 }
 
 .logo {
