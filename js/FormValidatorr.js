@@ -1,0 +1,1 @@
+document.getElementById("passSecond").onblur = chkPasswords; 
