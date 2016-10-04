@@ -1,1 +1,1 @@
-document.getElementById("passSecond").onblur = chkPasswords; 
+document.getElementById("vpw").onblur = chkPasswords; 

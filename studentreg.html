@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="index.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./js/FormValidator.js"></script>
   <nav class = "navbar navbar-default">
   	<div class = "container-fluid">
   		<div class = "collapse navbar-collapse">
@@ -24,6 +25,7 @@
     <hr>
     <br>
     <form>
+      <div style="margin:auto;display:none;" name="pwmatch" id="pwmatch"><p style="color:#eeb211">Passwords do not match!</p></div>
     <table class="padtable">
       <tr>
         <td>
@@ -90,7 +92,7 @@
           <p>Password:</p>
         </td>
         <td>
-          <input type="password" name="pw">
+          <input type="password" name="pw" id="pw">
         </td>
       </tr>
       <tr>
@@ -98,7 +100,7 @@
           <p>Verify Password:</p>
         </td>
         <td>
-          <input type="password" name="vpw">
+          <input type="password" name="vpw" id="vpw">
         </td>
       </tr>
       <tr>
@@ -109,5 +111,6 @@
     </table>
   </form>
   <p class="copyright">&copy;Copyright 2016 All rights reserved.</p>
+  <script src="./js/FormValidatorr.js"></script>
 </body>
 </html>

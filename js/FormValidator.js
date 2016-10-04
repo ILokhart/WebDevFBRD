@@ -1,6 +1,7 @@
 function chkPasswords() { 
-	var pass1 = document.getElementById("passFirst"); 
-	var pass2 = document.getElementById("passSecond"); 
+	var error = document.getElementById("pwmatch");
+	var pass1 = document.getElementById("pw"); 
+	var pass2 = document.getElementById("vpw"); 
 
 	if (pass1.value == "") { 
 		errorBox.style.display = "inherit";
@@ -10,7 +11,7 @@ function chkPasswords() {
 	}
 
 	if (pass1.value != pass2.value) { 
-		//Error message toggle goes here
+		error.style.display = "inline";
 		return false; 
 	} else 
 		return true; 
