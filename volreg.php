@@ -35,7 +35,7 @@ include('signup_process2.php');
             <p>Last Name: </p>
           </td>
           <td>
-            <input type="text" name="lname">
+            <input type="text" name="lname" placeholder="Last Name">
           </td>
         </tr>
         <tr>
@@ -43,7 +43,7 @@ include('signup_process2.php');
             <p>First Name: </p>
           </td>
           <td>
-            <input type="text" name="fname">
+            <input type="text" name="fname" placeholder="First Name">
           </td>
         </tr>
         <tr>
@@ -61,7 +61,7 @@ include('signup_process2.php');
               <p>Affiliation: </p>
             </td>
             <td>
-              <p><input type="text" name="aff">
+              <input type="text" name="aff" placeholder="Affiliation">
               </td>
             </tr>
             <tr>
@@ -69,7 +69,7 @@ include('signup_process2.php');
                 <p>Cell Phone:</p>
               </td>
               <td>
-                <p>(<input type="text" name="phone"></p>
+                <input type="text" name="phone" placeholder="Format: ##########">
               </td>
             </tr>
             <tr>
@@ -77,7 +77,7 @@ include('signup_process2.php');
                 <p>Email: </p>
               </td>
               <td>
-                <input type="text" name="email">
+                <input type="text" name="email" placeholder="E-mail">
               </td>
             </tr>
             <tr>
@@ -85,7 +85,7 @@ include('signup_process2.php');
                 <p>Password:</p>
               </td>
               <td>
-              <input type="password" name="pw" id="pw">
+              <input type="password" name="pw" id="pw" placeholder="Password">
               </td>
             </tr>
             <tr>
@@ -93,7 +93,7 @@ include('signup_process2.php');
                 <p>Verify Password:</p>
               </td>
               <td>
-                <input type="password" name="vpw" id="vpw">
+                <input type="password" name="vpw" id="vpw" placeholder="Verify Password">
               </td>
             </tr>
             <tr>

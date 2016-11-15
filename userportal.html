@@ -27,11 +27,11 @@
         <th colspan=2>Already a member? Login with your email and password.</th>
         <tr>
           <td class="lcol">Email: </td>
-          <td><input type="textbox" name="loginEmail" /></td>
+          <td><input type="textbox" name="loginEmail" placeholder="E-mail" /></td>
         </tr>
         <tr>
           <td class="lcol">Password: </td>
-          <td><input type="textbox" name="loginPass" /></td>
+          <td><input type="textbox" name="loginPass" placeholder="Password" /></td>
         </tr>
         <tr>
           <th colspan=2><input type="submit" value="Submit" align="center"/></th>
@@ -41,23 +41,24 @@
     <hr/>
     <form action="">
       <table class="portaltable table borderless" cellpadding="3px">
-        <tr>
+         <tr>
           <th>
             <p>To register, please select an option below:</p>
           </th>
         </tr>
         <tr>
           <td class="ccol">
-            <input type="radio" name="role" value="Student">Student
+			  <form action=".\studentreg.html" method="get">
+        <input type="submit"  value="Student" />
+				  </form>
           </td>
         </tr>
         <tr>
         <td class="ccol">
-          <input type="radio" name="role" value="Volunteer">Volunteer
+         <form action  = "volreg.php" method = "get">
+        <input type = "submit"  value = "Volunteer" />
+				  </form>
         </td>
-      </tr>
-      <tr>
-        <td class="ccol"><input type="submit" value="Submit" align="center"/></td>
       </tr>
     </table>
   </form>

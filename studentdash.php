@@ -1,6 +1,6 @@
-<?php     
+<?php
          session_start();
-         $email=$_SESSION['loginEmail'];     
+         $email=$_SESSION['loginEmail'];
 ?>
 <html>
 
@@ -38,27 +38,27 @@
         <th class="ccol" colspan=2>Need a lift from the Airport? Arrange for a ride:</th>
         <tr>
           <td class="lcol">Departure flight number: </td>
-          <td><input type="text" name="departNumber"></td>
+          <td><input type="text" name="departNumber" placeholder="Departure Flight Number"></td>
         </tr>
         <tr>
           <td class="lcol">Departure flight name: </td>
-          <td><input type="text" name="departNumber"></td>
+          <td><input type="text" name="departNumber" placeholder="Depature Flight Name"></td>
         </tr>
         <tr>
           <td class="lcol">Arrival flight number: </td>
-          <td><input type="text" name="flightNumber"></td>
+          <td><input type="text" name="flightNumber" placeholder="Arrival Flight Numnber"></td>
         </tr>
         <tr>
           <td class="lcol">Arrival airline name: </td>
-          <td><input type="text" name="flightName"></td>
+          <td><input type="text" name="flightName" placeholder="Arrival Airline Name"></td>
         </tr>
         <tr>
           <td class="lcol">Arival date:  </td>
-          <td><input type="date" name="flightDate"></td>
+          <td><input type="date" name="flightDate" placeholder="Arrival Date"></td>
         </tr>
         <tr>
           <td class="lcol">Arival time: </td>
-          <td><input type="time" name="flightTime"></td>
+          <td><input type="time" name="flightTime" placeholder="Arrival Time"></td>
         </tr>
         <th class="ccol" colspan=2>Do you also need temporary housing? (must select one)</th>
         <tr>
@@ -72,15 +72,15 @@
         </tr>
         <tr>
           <td class="lcol">Start date: </td>
-          <td><input type="date" name="housingStartDate"></td>
+          <td><input type="date" name="housingStartDate" placeholder="Start Date"></td>
         </tr>
         <tr>
           <td class="lcol">End date: </td>
-          <td><input type="date" name="housingEndDate"></td>
+          <td><input type="date" name="housingEndDate" placeholder="End Date"></td>
         </tr>
         <tr>
           <td class="lcol">Comments: </td>
-          <td><textarea rows="4" cols="40" name="comments" form="studentTicketForm"></textarea></td>
+          <td><textarea rows="4" cols="40" name="comments" form="studentTicketForm" placeholder="Comments"></textarea></td>
         </tr>
         <tr>
           <td class="ccol" colspan=2><input type="submit" value="Submit"></td>

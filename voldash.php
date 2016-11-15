@@ -45,7 +45,7 @@ session_start();
         <th class="ccol" colspan=2>Register a new student pickup availability:</th>
         <tr>
           <td class="lcol">Available date: </td>
-          <td><input type="date" name="volPickupDate"></td>
+          <td><input type="date" name="volPickupDate" placeholder="Available Date"></td>
         </tr>
         <tr>
           <td class="lcol">How many students can your vehicle carry? </td>
@@ -57,7 +57,7 @@ session_start();
         </tr>
         <tr>
           <td class="lcol">Comments: </td>
-          <td><textarea rows="4" cols="40" name="comments" form="volPickupReg"></textarea></td>
+          <td><textarea rows="4" cols="40" name="comments" form="volPickupReg" placeholder="Comments"></textarea></td>
         </tr>
         <tr>
           <td class="ccol" colspan=2><input type="submit" value="Submit"></td>
@@ -79,11 +79,11 @@ session_start();
         <th class="ccol" colspan=2>Register a new temporary housing availability:</th>
         <tr>
           <td class="lcol">Begining available date: </td>
-          <td><input type="date" name="volStartHousingDate"></td>
+          <td><input type="date" name="volStartHousingDate" placeholder="First Available Date"></td>
         </tr>
         <tr>
           <td class="lcol">Ending available date: </td>
-          <td><input type="date" name="volEndHousingDate"></td>
+          <td><input type="date" name="volEndHousingDate" placeholder="Last Available Date"></td>
         </tr>
         <tr>
           <td class="lcol">How many students can you accommodate? </td>
