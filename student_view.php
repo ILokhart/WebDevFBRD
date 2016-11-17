@@ -12,7 +12,7 @@
 <head>
   <title>Home</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="css/student-vol.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <nav class = "navbar navbar-default">
@@ -30,21 +30,18 @@
   <center>
     <img src="./images/georgia-tech-logos.png" alt="Georgia Tech Logo" class="logo img-responsive">
     <hr>
-    <div class="container">
-    <div class="row">
-        <div class="container hp">
-          <div class="row">
-            <div class="col-lg-6">
+
               <?php
                 include("db_connection.php");
                 $query = "SELECT * FROM student";
                 $result = mysqli_query($dbc, $query);
                 echo "<br>";
-                echo '<table style="width:500px;">';
+                echo '<table class="phpview">';
+                echo "<td><u><b>First Name</b></u></td><td><u><b>Last Name</b></u></td><td><u><b>Gender</b></u></td><td><u><b>Level</b></u></td><td><u><b>Major</b></u></td><td><u><b>Phone</b></u></td><td><u><b>E-mail</b></u></td>";
                 while ($row = mysqli_fetch_assoc($result)){
                   echo "<tr><td>";
                   echo $row['first_name'];
-                  echo "</td><td>";
+                  echo "</td><td class='phptable'>";
                   echo $row['last_name'];
                   echo "</td><td>";
                   echo $row['gender'];
@@ -61,11 +58,8 @@
                 echo "</table>";
                 mysqli_close($dbc);
               ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
 
     <br>
     <br>
