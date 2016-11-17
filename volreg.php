@@ -69,7 +69,7 @@ include('signup_process2.php');
                 <p>Cell Phone:</p>
               </td>
               <td>
-                <p>(<input type="text" name="phone"></p>
+                <p><input type="text" name="phone"></p>
               </td>
             </tr>
             <tr>

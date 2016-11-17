@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+			session_start();
+
+ if(!isset($_SESSION['loginEmail']))
+  {
+      header('Location: logout_error.php');
+      exit();
+  } 
+	?>
 <html lang="en">
 
 <head>
@@ -11,7 +19,8 @@
   	<div class = "container-fluid">
   		<div class = "collapse navbar-collapse">
   		<ul class = "nav navbar-nav">
-  			<li style="float:right"><a href="userportal.html">Sign In / Register</a></li>
+			<li style="float:right"><a href="signedout.php">Logout</a></li>
+  			<li style="float:right"><a href="admindash.php">Dashboard</a></li>
   		</ul>
   		</div>
   	</div>
@@ -45,5 +54,6 @@
       <br>
       <br>
       <p class="copyright">&copy;Copyright 2016 All rights reserved.</p>
+	</center>
 </body>
 </html>

@@ -1,7 +1,13 @@
-<?php     
-         session_start();
-         $email=$_SESSION['loginEmail'];     
+<?php   
+		session_start();
+
+ if(!isset($_SESSION['loginEmail']))
+  {
+      header('Location: logout_error.php');
+      exit();
+  }
 ?>
+
 <html>
 
 <head>
@@ -14,8 +20,8 @@
   	<div class = "container-fluid">
   		<div class = "collapse navbar-collapse">
         <ul class = "nav navbar-nav">
-         <li style="float:right"><a href="index.php">Logout</a></li>
-         <li style="float:right"><a href="index.php">Home</a></li>
+         <li style="float:right"><a href="signedout.php">Logout</a></li>
+         <li style="float:right"><a href="index_student.php">Home</a></li>
        </ul>
      </div>
    </div>
@@ -26,11 +32,15 @@
   <center>
     <img src="./images/georgia-tech-logos.png" alt="Georgia Tech Logo" class="logo img-responsive">
     <br>
+	  <ul>
+  <li><a><strong>Welcome <?php echo $_SESSION['loginEmail']; ?>!</strong></a></li>
+</ul>
+	  <br>
     <hr>
-    <table class="portaltable borderless">
+	  <table class="portaltable borderless">
       <th class="ccol"><a href="">Click here to view your housing and pickup tickets.</a></th>
     </table>
-
+	  <br>
     <hr/>
 
     <form name="studentTicketForm" action="">
@@ -91,6 +101,7 @@
     <hr/>
 
     <p class="copyright">&copy;Copyright 2016 All rights reserved.</p>
+	</center>
   </body>
   </html>
 

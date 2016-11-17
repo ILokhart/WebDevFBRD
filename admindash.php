@@ -1,3 +1,12 @@
+<?php
+		session_start();
+
+ if(!isset($_SESSION['loginEmail']))
+  {
+      header('Location: logout_error.php');
+      exit();
+  }
+?>
 
 <html>
 
@@ -12,8 +21,8 @@
   	<div class = "container-fluid">
   		<div class = "collapse navbar-collapse" style="float:right;">
         <ul class = "nav navbar-nav">
-         <li style="float:right"><a href="">Logout</a></li>
-         <li style="float:right"><a href="index.html">Home</a></li>
+         <li style="float:right"><a href="signedout.php">Logout</a></li>
+         <li style="float:right"><a href="index_admin.php">Home</a></li>
        </ul>
      </div>
    </div>
@@ -24,6 +33,10 @@
   <center>
     <img src="./images/georgia-tech-logos.png" alt="Georgia Tech Logo" class="logo img-responsive">
     <br>
+	  	  <ul>
+  <li><a><strong>Welcome <?php echo $_SESSION['loginEmail']; ?>!</strong></a></li>
+</ul>
+	  <br>
     <hr>
     <nav class="navbar navbar-default">
       <div class="container-fluid center">
@@ -57,9 +70,10 @@
       </div>
     </nav>
 
-    <p align=center><font color=#eeb211> Thank you for using AdminDash, $user.</font></p>
+    <p align=center><font color=#eeb211> Thank you for using AdminDash, <?php echo $_SESSION['loginEmail']; ?>.</font></p>
     <hr/>
     <p class="copyright">&copy;Copyright 2016 All rights reserved.</p>
+	</center>
   </body>
   </html>
 

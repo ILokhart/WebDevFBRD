@@ -39,7 +39,7 @@
       </table>
     </form>
 	  <?php
-session_start();
+	  session_start();
 include('db_connection.php');
 if(isset($_POST['submit']))
 {
@@ -47,22 +47,31 @@ if(isset($_POST['submit']))
  $password=$_POST['loginPass'];
  if($email!=''&& $password!='')
  {
-   $query=mysqli_query($dbc, "select * from student where email='".$email."' and password='".$password."'");
+   $query=mysqli_query($dbc, "select * from login where student_email='".$email."' and student_pass='".$password."'");
    $res=mysqli_fetch_row($query);
    if($res)
    {
     $_SESSION['loginEmail']=$email;
     header('location:studentdash.php');
    }
- }
-	else
-		 {
-   $query2=mysqli_query($dbc, "select * from volunteer where email='".$email."' and password='".$password."'") or die(mysql_error());
+	 else
+
+   $query2=mysqli_query($dbc, "select * from login where volunteer_email='".$email."' and volunteer_pass='".$password."'");
    $res2=mysqli_fetch_row($query2);
    if($res2)
    {
     $_SESSION['loginEmail']=$email;
     header('location:voldash.php');
+   }
+		 
+	 else
+	 		  
+   $query3=mysqli_query($dbc, "select * from login where admin_email='".$email."' and admin_pass='".$password."'") or die(mysql_error());
+   $res3=mysqli_fetch_row($query3);
+   if($res3)
+   {
+    $_SESSION['loginEmail']=$email;
+    header('location:admindash.php');
    }
  }
 }

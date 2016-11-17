@@ -1,6 +1,8 @@
 <?php
+	include('db_connection.php');
 	include('signup_process.php');
 	?>
+
 <html>
 
 <head>
@@ -14,7 +16,7 @@
   	<div class = "container-fluid">
   		<div class = "collapse navbar-collapse">
   		<ul class = "nav navbar-nav">
-  			<li style="float:right"><a href="index.html">Home</a></li>
+  			<li style="float:right"><a href="index.php">Home</a></li>
   		</ul>
   		</div>
   	</div>
@@ -27,9 +29,7 @@
     <br>
     <hr>
     <br>
-	  
     <form action="signup_process.php" method="post">
-		
       <div style="margin:auto;display:none;" name="pwmatch" id="pwmatch"><p style="color:#eeb211">Passwords do not match!</p></div>
     <table class="padtable">
       <tr>
@@ -37,7 +37,7 @@
           <p>Last Name: </p>
         </td>
         <td>
-          <input type="text" name="lname">
+          <input type="text" name="lname" placeholder="Last Name">
         </td>
       </tr>
       <tr>
@@ -45,7 +45,7 @@
           <p>First Name: </p>
         </td>
         <td>
-          <input type="text" name="fname">
+          <input type="text" name="fname" placeholder="First Name">
         </td>
       </tr>
       <tr>
@@ -73,15 +73,15 @@
           <p>Major: </p>
         </td>
         <td>
-          <input type="text" name="major">
+          <input type="text" name="major" placeholder="Major">
         </td>
       </tr>
       <tr>
         <td>
-			<p>Emergency Contact: <br> <font size="-2">(Country code ###-###-####)</font></p>
+          <p>Emergency Contact:</p>
         </td>
         <td>
-          <p>+<input type="text" name="ccode" maxlength="3" size="1"> (<input type="text" name="area" maxlength="3" size="1">) <input type="text" name="fphone" maxlength="3" size="1"> - <input type="text" name="lphone" maxlength="4" size="1"></p>
+          <input type="text" name="ccode" maxlength="11" placeholder="Format ###########">
         </td>
       </tr>
       <tr>
@@ -89,7 +89,7 @@
           <p>Email: </p>
         </td>
         <td>
-          <input type="text" name="email">
+          <input type="text" name="email" placeholder="E-mail">
         </td>
       </tr>
       <tr>
@@ -97,7 +97,7 @@
           <p>Password:</p>
         </td>
         <td>
-          <input type="password" name="pw" id="pw">
+          <input type="password" name="pw" id="pw" placeholder="Password">
         </td>
       </tr>
       <tr>
@@ -105,7 +105,7 @@
           <p>Verify Password:</p>
         </td>
         <td>
-          <input type="password" name="vpw" id="vpw">
+          <input type="password" name="vpw" id="vpw" placeholder="Verify Password">
         </td>
       </tr>
       <tr>
