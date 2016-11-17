@@ -1,25 +1,3 @@
-CREATE TABLE VOLUNTEER(
-vid int NOT NULL auto_increment,
-vlname varchar(255),
-vfname varchar(255),
-gender enum('Male', 'Female', 'Other') NOT NULL,
-vaffiliation varchar(255),
-vphone varchar(255),
-vmail varchar(255),
-vpass varchar(255),
-CONSTRAINT pk_vid PRIMARY KEY (vid));
-
-CREATE TABLE STUDENT(
-sid int NOT NULL auto_increment,
-slname varchar(255),
-sfname varchar(255),
-sgender enum('Male', 'Female', 'Other') NOT NULL,
-slevel enum('Undergrad', 'Graduate', 'Visiting Scholar') NOT NULL,
-smajor varchar(255),
-sontact varchar(255),
-smail varchar(255),
-spass varchar(255),
-CONSTRAINT pk_sid PRIMARY KEY (sid));
 
 CREATE TABLE STICKET(
 sticketid int NOT NULL auto_increment,
