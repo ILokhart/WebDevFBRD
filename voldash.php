@@ -100,7 +100,7 @@
         </tr>
         <tr>
           <td class="lcol">Comments: </td>
-          <td><textarea rows="4" cols="40" name="comments" form="volHousingReg"></textarea></td>
+          <td><textarea rows="4" cols="40" name="commentsh" form="volHousingReg"></textarea></td>
         </tr>
         <tr>
           <td class="ccol" colspan=2><input type="submit" value="Submit"></td>
