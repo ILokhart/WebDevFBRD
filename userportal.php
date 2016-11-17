@@ -27,11 +27,11 @@
         <th colspan=2>Already a member? Login with your email and password.</th>
         <tr>
           <td class="lcol">Email: </td>
-          <td><input type="textbox" name="loginEmail" placeholder="E-mail"/></td>
+          <td><input type="textbox" name="loginEmail" /></td>
         </tr>
         <tr>
           <td class="lcol">Password: </td>
-          <td><input type="password" name="loginPass" placeholder="Password"/></td>
+          <td><input type="password" name="loginPass" /></td>
         </tr>
         <tr>
           <th colspan=2><input type='submit' name= 'submit' value="Submit" align="center"/></th>
@@ -45,42 +45,36 @@ if(isset($_POST['submit']))
 {
  $email=$_POST['loginEmail'];
  $password=$_POST['loginPass'];
+
  if($email!=''&& $password!='')
  {
-   $query=mysqli_query($dbc, "select * from login where student_email='".$email."' and student_pass='".$password."'");
-   $res=mysqli_fetch_row($query);
-   if($res)
-   {
+   $query=mysqli_query($dbc, "select * from login where email='".$email."' and pass='".$password."'");
+   $res=mysqli_fetch_assoc($query);
     $_SESSION['loginEmail']=$email;
-    header('location:studentdash.php');
-   }
-	 else
-
-   $query2=mysqli_query($dbc, "select * from login where volunteer_email='".$email."' and volunteer_pass='".$password."'");
-   $res2=mysqli_fetch_row($query2);
-   if($res2)
+	 if($res)
    {
-    $_SESSION['loginEmail']=$email;
-    header('location:voldash.php');
-   }
-		 
-	 else
-	 		  
-   $query3=mysqli_query($dbc, "select * from login where admin_email='".$email."' and admin_pass='".$password."'") or die(mysql_error());
-   $res3=mysqli_fetch_row($query3);
-   if($res3)
-   {
-    $_SESSION['loginEmail']=$email;
-    header('location:admindash.php');
-   }
+   
+	   if($res["type"] == 0)
+	   {
+		   header('location:studentdash.php');
+	   } 
+			 
+	   if($res["type"] == 1)
+	   {
+		   header('location:voldash.php');
+	   }
+			 
+	   if ($res["type"] == 2)
+	   {
+			   header('location:admindash.php');
+	   }	
+	   }
  }
-}
-
-
-
+}	
+	 
 ?>
     <hr/>
-
+ 
       <table class="portaltable table borderless" cellpadding="3px">
          <tr>
           <th>
@@ -91,14 +85,14 @@ if(isset($_POST['submit']))
           <td class="ccol">
 			  <form action  = "studentreg.php" method = "get">
         <input type = "submit"  value = "Student" />
-				  </form>
+				  </form>    
           </td>
         </tr>
         <tr>
         <td class="ccol">
          <form action  = "volreg.php" method = "get">
         <input type = "submit"  value = "Volunteer" />
-				  </form>
+				  </form>  
         </td>
       </tr>
     </table>

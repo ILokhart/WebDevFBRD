@@ -35,16 +35,17 @@ $affiliation = $_POST['aff'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 $password = $_POST['pw'];
+$type = 1;
 	
 //if values are not empty, proceed to store them in the database
 if(!empty($lname) && !empty($fname) && !empty($gender) && !empty($affiliation) && !empty($phone) && !empty($email) && !empty($password))
 {
 				  
-		mysqli_query($dbc, "INSERT INTO volunteer (last_name, first_name, gender, affiliation, phone)
-		VALUES ('$lname', '$fname', '$gender', '$affiliation',  '$phone')");
-		
-		mysqli_query($dbc, "INSERT INTO login (volunteer_email, volunteer_pass)
-		VALUES ('$email', '$password')");
+		mysqli_query($dbc, "INSERT INTO login (email, pass, type)
+		VALUES ('$email', '$password', '$type')");
+	
+		mysqli_query($dbc, "INSERT INTO volunteer (last_name, first_name, gender, affiliation, phone, email)
+		VALUES ('$lname', '$fname', '$gender', '$affiliation',  '$phone', '$email')");
 		
 		echo "Thank you for registering!";	
 		echo'<br><a href="userportal.php">Go Back To Main Page</a>';

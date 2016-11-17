@@ -2,7 +2,7 @@
 //define variables
 $hostname = "localhost";
 $username = "root";
-$password = "indexme";
+$password = "";
 $dbname = "project";
 
 //making the connection to mysql

@@ -37,14 +37,15 @@ $major = $_POST['major'];
 $contact = $_POST['ccode'];
 $email = $_POST['email'];
 $password = $_POST['pw'];
+$type = 0;
 	
 //if values are not empty, proceed to store them in the database
 if(!empty($lname) && !empty($fname) && !empty($gender) && !empty($level) && !empty($major) && !empty($contact) && !empty($email) && !empty($password))
-{
-		mysqli_query($dbc, "INSERT INTO student (last_name, first_name, gender, level, major, contact)
-		VALUES ('$lname', '$fname', '$gender', '$level',  '$major', '$contact')");
+{		
+		mysqli_query($dbc, "INSERT INTO login (email, pass, type) VALUES ('$email','$password', '$type')");
 		
-		mysqli_query($dbc, "INSERT INTO login (student_email, student_pass) VALUES ('$email','$password')");
+		mysqli_query($dbc, "INSERT INTO student (last_name, first_name, gender, level, major, contact, email)
+		VALUES ('$lname', '$fname', '$gender', '$level',  '$major', '$contact', '$email')");
 		
 		echo "Thank you for registering!";	
 		echo'<br><a href="userportal.php">Go Back To Main Page</a>';
