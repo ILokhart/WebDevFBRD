@@ -29,7 +29,13 @@
     <br>
     <hr>
     <br>
+<<<<<<< HEAD
     <form action="signup_process.php" method="post">
+=======
+
+    <form action="signup_process.php" method="post">
+
+>>>>>>> 51502ec9da701073e961d379f17d56365943e2dd
       <div style="margin:auto;display:none;" name="pwmatch" id="pwmatch"><p style="color:#eeb211">Passwords do not match!</p></div>
     <table class="padtable">
       <tr>
@@ -81,15 +87,23 @@
           <p>Emergency Contact:</p>
         </td>
         <td>
+<<<<<<< HEAD
           <input type="text" name="ccode" maxlength="11" placeholder="Format ###########">
         </td>
+=======
+          <input type="text" name="econtact" maxlength="11" placeholder="Format: ###########">
+>>>>>>> 51502ec9da701073e961d379f17d56365943e2dd
       </tr>
       <tr>
         <td>
           <p>Email: </p>
         </td>
         <td>
+<<<<<<< HEAD
           <input type="text" name="email" placeholder="E-mail">
+=======
+          <input type="text" name="email" placeholder="E-Mail">
+>>>>>>> 51502ec9da701073e961d379f17d56365943e2dd
         </td>
       </tr>
       <tr>

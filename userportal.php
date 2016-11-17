@@ -27,11 +27,11 @@
         <th colspan=2>Already a member? Login with your email and password.</th>
         <tr>
           <td class="lcol">Email: </td>
-          <td><input type="textbox" name="loginEmail" /></td>
+          <td><input type="textbox" name="loginEmail" placeholder="E-mail"/></td>
         </tr>
         <tr>
           <td class="lcol">Password: </td>
-          <td><input type="password" name="loginPass" /></td>
+          <td><input type="password" name="loginPass" placeholder="Password"/></td>
         </tr>
         <tr>
           <th colspan=2><input type='submit' name= 'submit' value="Submit" align="center"/></th>
@@ -75,12 +75,12 @@ if(isset($_POST['submit']))
    }
  }
 }
-	 
-	 
-	 
+
+
+
 ?>
     <hr/>
- 
+
       <table class="portaltable table borderless" cellpadding="3px">
          <tr>
           <th>
@@ -91,14 +91,14 @@ if(isset($_POST['submit']))
           <td class="ccol">
 			  <form action  = "studentreg.php" method = "get">
         <input type = "submit"  value = "Student" />
-				  </form>    
+				  </form>
           </td>
         </tr>
         <tr>
         <td class="ccol">
          <form action  = "volreg.php" method = "get">
         <input type = "submit"  value = "Volunteer" />
-				  </form>  
+				  </form>
         </td>
       </tr>
     </table>
