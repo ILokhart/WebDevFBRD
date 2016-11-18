@@ -1,4 +1,5 @@
 <?php   
+error_reporting(0);
 		session_start();
 
  if(!isset($_SESSION['loginEmail']))
@@ -6,6 +7,8 @@
       header('Location: logout_error.php');
       exit();
   }
+include('db_connection.php');
+include('student_ticket_process.php');
 ?>
 
 <html>
@@ -43,7 +46,7 @@
 	  <br>
     <hr/>
 
-    <form name="studentTicketForm" action="">
+    <form action="student_ticket_process.php" method="post">
       <table class="width borderless table">
         <th class="ccol" colspan=2>Need a lift from the Airport? Arrange for a ride:</th>
         <tr>
@@ -52,7 +55,7 @@
         </tr>
         <tr>
           <td class="lcol">Departure flight name: </td>
-          <td><input type="text" name="departNumber"></td>
+          <td><input type="text" name="departName"></td>
         </tr>
         <tr>
           <td class="lcol">Arrival flight number: </td>
@@ -73,8 +76,8 @@
         <th class="ccol" colspan=2>Do you also need temporary housing? (must select one)</th>
         <tr>
           <td class="ccol" colspan=2>
-            <input type="radio" name="housingOption" value="yesHousing">Yes
-            <input type="radio" name="housingOption" value="yesHousing">No
+            <input type="radio" name="housingOption" value="Yes">Yes
+            <input type="radio" name="housingOption" value="No">No
           </td>
         </tr>
         <tr>
@@ -90,7 +93,7 @@
         </tr>
         <tr>
           <td class="lcol">Comments: </td>
-          <td><textarea rows="4" cols="40" name="comments" form="studentTicketForm"></textarea></td>
+          <td><textarea rows="4" cols="40" name="comments"></textarea></td>
         </tr>
         <tr>
           <td class="ccol" colspan=2><input type="submit" value="Submit"></td>

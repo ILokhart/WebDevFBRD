@@ -1,4 +1,5 @@
-<?php
+<?php   
+error_reporting(0);
 		session_start();
 
  if(!isset($_SESSION['loginEmail']))
@@ -6,6 +7,9 @@
       header('Location: logout_error.php');
       exit();
   }
+include('db_connection.php');
+include('volunteer_ticket_process.php');
+include('volunteer_ticket_process2.php');
 ?>
 <html>
 
@@ -49,7 +53,7 @@
       </tr>
     </table>
 
-    <form action="" name="volPickupReg">
+    <form action="volunteer_ticket_process.php" method="post">
       <table class="width table borderless">
         <th class="ccol" colspan=2>Register a new student pickup availability:</th>
         <tr>
@@ -58,15 +62,15 @@
         </tr>
         <tr>
           <td class="lcol">How many students can your vehicle carry? </td>
-          <td><input type="number" min=1 name="passengers" value=1></td>
+          <td><input type="number" min=1 name="passengers"></td>
         </tr>
         <tr>
           <td class="lcol">How many round trips will you make? </td>
-          <td><input type="number" min=1 name="roundTrips" value=1></td>
+          <td><input type="number" min=1 name="roundTrips"></td>
         </tr>
         <tr>
           <td class="lcol">Comments: </td>
-          <td><textarea rows="4" cols="40" name="comments" form="volPickupReg"></textarea></td>
+          <td><textarea rows="4" cols="40" name="comments"></textarea></td>
         </tr>
         <tr>
           <td class="ccol" colspan=2><input type="submit" value="Submit"></td>
@@ -83,7 +87,7 @@
       </tr>
     </table>
 
-    <form action="" name="volHousingReg">
+    <form action="volunteer_ticket_process2.php" method="post">
       <table class="width table borderless">
         <th class="ccol" colspan=2>Register a new temporary housing availability:</th>
         <tr>
@@ -100,7 +104,7 @@
         </tr>
         <tr>
           <td class="lcol">Comments: </td>
-          <td><textarea rows="4" cols="40" name="commentsh" form="volHousingReg"></textarea></td>
+          <td><textarea rows="4" cols="40" name="comments"></textarea></td>
         </tr>
         <tr>
           <td class="ccol" colspan=2><input type="submit" value="Submit"></td>

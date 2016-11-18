@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2016 at 08:10 PM
+-- Generation Time: Nov 18, 2016 at 09:57 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -66,6 +66,50 @@ INSERT INTO `login` (`id`, `email`, `pass`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `matchticket`
+--
+
+CREATE TABLE `matchticket` (
+  `matchid` int(11) NOT NULL,
+  `sticketid` int(11) DEFAULT NULL,
+  `vsticketid` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sticket`
+--
+
+CREATE TABLE `sticket` (
+  `sticketid` int(10) NOT NULL,
+  `dflightnum` varchar(255) NOT NULL,
+  `dflightname` varchar(255) NOT NULL,
+  `aflightnum` varchar(255) NOT NULL,
+  `aflightname` varchar(255) NOT NULL,
+  `adate` date NOT NULL,
+  `atime` time NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sticket2`
+--
+
+CREATE TABLE `sticket2` (
+  `sticketid` int(10) NOT NULL,
+  `shousing` enum('Yes','No') NOT NULL,
+  `sdatestart` date NOT NULL,
+  `sdateend` date NOT NULL,
+  `acomments` text NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `student`
 --
 
@@ -110,6 +154,50 @@ CREATE TABLE `volunteer` (
 INSERT INTO `volunteer` (`id`, `last_name`, `first_name`, `gender`, `affiliation`, `phone`, `email`) VALUES
 (1, 'Kim', 'Jason', 'male', 'GGC', '666-666-6666', 'voltest@ggc.edu');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vsticket`
+--
+
+CREATE TABLE `vsticket` (
+  `vsticketid` int(11) NOT NULL,
+  `vavdate` date DEFAULT NULL,
+  `capacity` int(11) DEFAULT NULL,
+  `numtrips` int(11) DEFAULT NULL,
+  `comments` text,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vsticket`
+--
+
+INSERT INTO `vsticket` (`vsticketid`, `vavdate`, `capacity`, `numtrips`, `comments`, `email`) VALUES
+(1, '2019-02-03', 3, 4, 'testing', 'voltest@ggc.edu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vsticket2`
+--
+
+CREATE TABLE `vsticket2` (
+  `id` int(10) NOT NULL,
+  `begining_available_date` varchar(30) NOT NULL,
+  `ending_available_date` varchar(30) NOT NULL,
+  `accommodate_student_number` varchar(30) NOT NULL,
+  `comment` varchar(50) NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vsticket2`
+--
+
+INSERT INTO `vsticket2` (`id`, `begining_available_date`, `ending_available_date`, `accommodate_student_number`, `comment`, `email`) VALUES
+(1, '2017-02-02', '2017-03-02', '5', 'sdfgb', 'voltest@ggc.edu');
+
 --
 -- Indexes for dumped tables
 --
@@ -127,6 +215,26 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `matchticket`
+--
+ALTER TABLE `matchticket`
+  ADD PRIMARY KEY (`matchid`),
+  ADD KEY `fk_sticketid` (`sticketid`),
+  ADD KEY `fk_vsticketid` (`vsticketid`);
+
+--
+-- Indexes for table `sticket`
+--
+ALTER TABLE `sticket`
+  ADD PRIMARY KEY (`sticketid`);
+
+--
+-- Indexes for table `sticket2`
+--
+ALTER TABLE `sticket2`
+  ADD PRIMARY KEY (`sticketid`);
+
+--
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
@@ -136,6 +244,18 @@ ALTER TABLE `student`
 -- Indexes for table `volunteer`
 --
 ALTER TABLE `volunteer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `vsticket`
+--
+ALTER TABLE `vsticket`
+  ADD PRIMARY KEY (`vsticketid`);
+
+--
+-- Indexes for table `vsticket2`
+--
+ALTER TABLE `vsticket2`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -153,6 +273,16 @@ ALTER TABLE `admin`
 ALTER TABLE `login`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `sticket`
+--
+ALTER TABLE `sticket`
+  MODIFY `sticketid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `sticket2`
+--
+ALTER TABLE `sticket2`
+  MODIFY `sticketid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
@@ -162,6 +292,27 @@ ALTER TABLE `student`
 --
 ALTER TABLE `volunteer`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `vsticket`
+--
+ALTER TABLE `vsticket`
+  MODIFY `vsticketid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `vsticket2`
+--
+ALTER TABLE `vsticket2`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `matchticket`
+--
+ALTER TABLE `matchticket`
+  ADD CONSTRAINT `fk_sticketid` FOREIGN KEY (`sticketid`) REFERENCES `sticket` (`sticketid`),
+  ADD CONSTRAINT `fk_vsticketid` FOREIGN KEY (`vsticketid`) REFERENCES `vsticket` (`vsticketid`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
