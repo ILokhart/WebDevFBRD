@@ -45,7 +45,7 @@
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registered Users<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="student_view.php">Student List</a></li>
+                <li><a href="results.php">Student List</a></li>
                 <li><a href="#">Volunteer List</a></li>
               </ul>
             </li>
