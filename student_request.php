@@ -69,18 +69,15 @@
         </div>
       </div>
     </nav>
-	  
-	  <div class="container">
-    <div class="row">
-        <div class="container hp">
-          <div class="row">
-            <div class="col-lg-6">
+
+<center>
               <?php
                 include("db_connection.php");
                 $query = "SELECT * FROM sticket";
                 $result = mysqli_query($dbc, $query);
                 echo "<br>";
-                echo '<table style="width:500px;">';
+								echo '<table class="results">';
+								echo "<tr><th><u>Email</th><th><u>Departure Flight #</th><th><u>Departure Flight Name</th><th><u>Arrival Flight #</th><th><u>Arrival Flight Name</th><th><u>Arrival Date</th><th><u>Arrival Time</u></th></tr>";
                 while ($row = mysqli_fetch_assoc($result)){
                   echo "<tr><td>";
                   echo $row['sticketid'];
@@ -103,11 +100,7 @@
                 echo "</table>";
                 mysqli_close($dbc);
               ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+</center>
 	  <br>
 
     <p align=center><font color=#eeb211> Thank you for using AdminDash, <?php echo $_SESSION['loginEmail']; ?>.</font></p>

@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" type="text/css" href="./css/admin.css">
+	<!--<link rel="stylesheet" type="text/css" href="views.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <nav class = "navbar navbar-default">
@@ -68,19 +69,18 @@
           </ul>
         </div>
       </div>
-    </nav> 
-	  
-	  <div class="container">
-    <div class="row">
-        <div class="container hp">
-          <div class="row">
-            <div class="col-lg-6">
+    </nav>
+
+
+
+							<center>
               <?php
                 include("db_connection.php");
                 $query = "SELECT * FROM student";
                 $result = mysqli_query($dbc, $query);
                 echo "<br>";
-                echo '<table style="width:500px;">';
+                echo '<table class="results">';
+								echo "<tr><th><u>First Name</th><th><u>Last Name</th><th><u>Gender</th><th><u>Academic Level</th><th><u>Major</th><th><u>Phone</th><th><u>E-mail</u></th></tr>";
                 while ($row = mysqli_fetch_assoc($result)){
                   echo "<tr><td>";
                   echo $row['first_name'];
@@ -101,11 +101,8 @@
                 echo "</table>";
                 mysqli_close($dbc);
               ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
 	  <br>
 
     <p align=center><font color=#eeb211> Thank you for using AdminDash, <?php echo $_SESSION['loginEmail']; ?>.</font></p>

@@ -68,19 +68,16 @@
           </ul>
         </div>
       </div>
-    </nav>  
-	  
-	  <div class="container">
-    <div class="row">
-        <div class="container hp">
-          <div class="row">
-            <div class="col-lg-6">
+    </nav>
+
+<center>
               <?php
                 include("db_connection.php");
                 $query = "SELECT * FROM volunteer";
                 $result = mysqli_query($dbc, $query);
                 echo "<br>";
-                echo '<table style="width:500px;">';
+								echo '<table class="results">';
+								echo "<tr><th><u>First Name</th><th><u>Last Name</th><th><u>Gender</th><th><u>Affilitation</th><th><u>Phone</th><th><u>E-mail</u></th></tr>";
                 while ($row = mysqli_fetch_assoc($result)){
                   echo "<tr><td>";
                   echo $row['first_name'];
@@ -99,11 +96,7 @@
                 echo "</table>";
                 mysqli_close($dbc);
               ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+</center>
 	  <br>
 
     <p align=center><font color=#eeb211> Thank you for using AdminDash, <?php echo $_SESSION['loginEmail']; ?>.</font></p>

@@ -40,16 +40,7 @@ table {
 }
 
 .navbar-nav{
-  text-align: center;
-}
-
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-}
-
-.navbar .navbar-collapse {
-    text-align: center;
+  float: right;
 }
 
 ul a {
@@ -59,7 +50,6 @@ ul a {
 
 ul a:hover {
   color: white !important;
-  background-color: #00254c !important;
 }
 
 li {
@@ -83,6 +73,8 @@ hr{
 
 .portaltable {
 border-collapse: initial;
+width: 30%;
+
 }
 
 .portaltable th{
@@ -121,8 +113,11 @@ height: auto;
   height: auto;
 }
 
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {    color: #555;
-    background-color: #00254c;
+.width {
+  width: 50%;
+}
+
+.center {
 }
 
 @media (max-width: 400px){
@@ -131,10 +126,10 @@ height: auto;
   }
 }
 
-.results{
-  background-color: white;
-  color: black;
-  width: 60% !important;
-  border-bottom: 1px dotted #eeb211;
+.phptable {
+  column-width: auto;
+}
 
+.phpview {
+  width: 75%;
 }

@@ -68,19 +68,16 @@
           </ul>
         </div>
       </div>
-    </nav>  
-	  
-	  <div class="container">
-    <div class="row">
-        <div class="container hp">
-          <div class="row">
-            <div class="col-lg-6">
+    </nav>
+
+<center>
               <?php
                 include("db_connection.php");
                 $query = "SELECT * FROM vsticket";
                 $result = mysqli_query($dbc, $query);
                 echo "<br>";
-                echo '<table style="width:500px;">';
+								echo '<table class="results">';
+								echo "<tr><th><u>Email</th><th><u>Available Date</th><th><u>Capacity</th><th><u># of Trips</th><th><u>Comments</th></tr>";
                 while ($row = mysqli_fetch_assoc($result)){
                   echo "<tr><td>";
                   echo $row['vsticketid'];
