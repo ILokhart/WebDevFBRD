@@ -79,8 +79,7 @@
 								echo '<table class="results">';
 								echo "<tr><th><u>Email</th><th><u>Start Available Date</th><th><u>End Available Date</th><th><u># of Accommodations</th><th><u>Comments</th></tr>";
                 while ($row = mysqli_fetch_assoc($result)){
-                  echo "<tr><td>";
-                  echo $row['id'];
+          
                   echo "</td><td>";
                   echo $row['email'];
                   echo "</td><td>";

@@ -79,8 +79,7 @@
 								echo '<table class="results">';
 								echo "<tr><th><u>Email</th><th><u>Available Date</th><th><u>Capacity</th><th><u># of Trips</th><th><u>Comments</th></tr>";
                 while ($row = mysqli_fetch_assoc($result)){
-                  echo "<tr><td>";
-                  echo $row['vsticketid'];
+
                   echo "</td><td>";
                   echo $row['email'];
                   echo "</td><td>";

@@ -79,9 +79,7 @@
 								echo '<table class="results">';
 								echo "<tr><th><u>Email</th><th><u>Departure Flight #</th><th><u>Departure Flight Name</th><th><u>Arrival Flight #</th><th><u>Arrival Flight Name</th><th><u>Arrival Date</th><th><u>Arrival Time</u></th></tr>";
                 while ($row = mysqli_fetch_assoc($result)){
-                  echo "<tr><td>";
-                  echo $row['sticketid'];
-                  echo "</td><td>";
+                                    echo "</td><td>";
                   echo $row['email'];
                   echo "</td><td>";
                   echo $row['dflightnum'];
