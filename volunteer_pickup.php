@@ -54,8 +54,8 @@
               <ul class="dropdown-menu">
                 <li><a href="student_request.php">Student Requests</a></li>
                 <li><a href="student_housing.php">Student Housing Requests</a></li>
-                <li><a href="#">Volunteer Pickup Availability</a></li>
-                <li><a href="#">Volunteer Housing Availability</a></li>
+                <li><a href="volunteer_pickup.php">Volunteer Pickup Availability</a></li>
+                <li><a href="volunteer_housing.php">Volunteer Housing Availability</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -68,7 +68,7 @@
           </ul>
         </div>
       </div>
-    </nav> 
+    </nav>  
 	  
 	  <div class="container">
     <div class="row">
@@ -77,25 +77,23 @@
             <div class="col-lg-6">
               <?php
                 include("db_connection.php");
-                $query = "SELECT * FROM student";
+                $query = "SELECT * FROM vsticket";
                 $result = mysqli_query($dbc, $query);
                 echo "<br>";
                 echo '<table style="width:500px;">';
                 while ($row = mysqli_fetch_assoc($result)){
                   echo "<tr><td>";
-                  echo $row['first_name'];
-                  echo "</td><td>";
-                  echo $row['last_name'];
-                  echo "</td><td>";
-                  echo $row['gender'];
-                  echo "</td><td>";
-                  echo $row['level'];
-                  echo "</td><td>";
-                  echo $row['major'];
-                  echo "</td><td>";
-                  echo $row['contact'];
+                  echo $row['vsticketid'];
                   echo "</td><td>";
                   echo $row['email'];
+                  echo "</td><td>";
+                  echo $row['vavdate'];
+                  echo "</td><td>";
+                  echo $row['capacity'];
+                  echo "</td><td>";
+                  echo $row['numtrips'];
+                  echo "</td><td>";
+                  echo $row['comments'];
                   echo "</td></tr>";
                 }
                 echo "</table>";

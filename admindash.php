@@ -46,16 +46,16 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registered Users<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="student_view.php">Student List</a></li>
-                <li><a href="#">Volunteer List</a></li>
+                <li><a href="vol_view.php">Volunteer List</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Requests/Availability<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Student Requests</a></li>
-                <li><a href="#">Student Housing Requests</a></li>
-                <li><a href="#">Volunteer Pickup Availability</a></li>
-                <li><a href="#">Volunteer Housing Availability</a></li>
+                <li><a href="student_request.php">Student Requests</a></li>
+                <li><a href="student_housing.php">Student Housing Requests</a></li>
+                <li><a href="volunteer_pickup.php">Volunteer Pickup Availability</a></li>
+                <li><a href="volunteer_housing.php">Volunteer Housing Availability</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -68,7 +68,7 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav>  
 
     <p align=center><font color=#eeb211> Thank you for using AdminDash, <?php echo $_SESSION['loginEmail']; ?>.</font></p>
     <hr/>

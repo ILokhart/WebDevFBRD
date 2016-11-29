@@ -54,8 +54,8 @@
               <ul class="dropdown-menu">
                 <li><a href="student_request.php">Student Requests</a></li>
                 <li><a href="student_housing.php">Student Housing Requests</a></li>
-                <li><a href="#">Volunteer Pickup Availability</a></li>
-                <li><a href="#">Volunteer Housing Availability</a></li>
+                <li><a href="volunteer_pickup.php">Volunteer Pickup Availability</a></li>
+                <li><a href="volunteer_housing.php">Volunteer Housing Availability</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -68,7 +68,7 @@
           </ul>
         </div>
       </div>
-    </nav> 
+    </nav>
 	  
 	  <div class="container">
     <div class="row">
@@ -77,25 +77,23 @@
             <div class="col-lg-6">
               <?php
                 include("db_connection.php");
-                $query = "SELECT * FROM student";
+                $query = "SELECT * FROM sticket2";
                 $result = mysqli_query($dbc, $query);
                 echo "<br>";
                 echo '<table style="width:500px;">';
                 while ($row = mysqli_fetch_assoc($result)){
                   echo "<tr><td>";
-                  echo $row['first_name'];
-                  echo "</td><td>";
-                  echo $row['last_name'];
-                  echo "</td><td>";
-                  echo $row['gender'];
-                  echo "</td><td>";
-                  echo $row['level'];
-                  echo "</td><td>";
-                  echo $row['major'];
-                  echo "</td><td>";
-                  echo $row['contact'];
+                  echo $row['sticketid'];
                   echo "</td><td>";
                   echo $row['email'];
+                  echo "</td><td>";
+                  echo $row['shousing'];
+                  echo "</td><td>";
+                  echo $row['sdatestart'];
+                  echo "</td><td>";
+                  echo $row['sdateend'];
+                  echo "</td><td>";
+                  echo $row['acomments'];
                   echo "</td></tr>";
                 }
                 echo "</table>";
@@ -106,6 +104,7 @@
         </div>
       </div>
     </div>
+	  
 	  <br>
 
     <p align=center><font color=#eeb211> Thank you for using AdminDash, <?php echo $_SESSION['loginEmail']; ?>.</font></p>
